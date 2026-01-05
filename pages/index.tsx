@@ -266,7 +266,7 @@ const HealthReport = () => {
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Baseline vs. Treatment Trends</h2>
         <div className={styles.chartContainer}>
-          <div className={styles.chartTitle}>Heart Rate Variability (HRV) & Heart Rate (HR)</div>
+          <div className={styles.chartTitle}>Health Metrics: HRV, HR & Body Feedback Score</div>
           <div className={styles.barChart}>
             {/* HRV Group */}
             <div className={styles.barGroup}>
@@ -280,8 +280,8 @@ const HealthReport = () => {
                 <div className={`${styles.bar} ${styles.post}`} style={{ height: '133px' }}>
                   <div className={styles.barValue}>33.2</div>
                 </div>
-                <div className={`${styles.bar} ${styles.week3}`} style={{ height: '128px', background: '#A3E635' }}>
-                  <div className={styles.barValue}>32.0</div>
+                <div className={`${styles.bar} ${styles.week3}`} style={{ height: '127px', background: '#A3E635' }}>
+                  <div className={styles.barValue}>31.7</div>
                 </div>
               </div>
               <div className={styles.barLabel}>Avg HRV (ms)</div>
@@ -299,10 +299,28 @@ const HealthReport = () => {
                   <div className={styles.barValue}>79.3</div>
                 </div>
                 <div className={`${styles.bar} ${styles.week3}`} style={{ height: '148px', background: '#F87171' }}>
-                  <div className={styles.barValue}>74.0</div>
+                  <div className={styles.barValue}>73.9</div>
                 </div>
               </div>
               <div className={styles.barLabel}>Avg HR (bpm)</div>
+            </div>
+            {/* Body Feedback Group */}
+            <div className={styles.barGroup}>
+              <div className={styles.bars}>
+                <div className={`${styles.bar} ${styles.pre}`} style={{ height: '118px' }}>
+                  <div className={styles.barValue}>29.6</div>
+                </div>
+                <div className={`${styles.bar} ${styles.week1}`} style={{ height: '113px' }}>
+                  <div className={styles.barValue}>28.3</div>
+                </div>
+                <div className={`${styles.bar} ${styles.post}`} style={{ height: '138px', background: '#8B5CF6' }}>
+                  <div className={styles.barValue}>34.5</div>
+                </div>
+                <div className={`${styles.bar} ${styles.week3}`} style={{ height: '172px', background: '#C084FC' }}>
+                  <div className={styles.barValue}>43.1</div>
+                </div>
+              </div>
+              <div className={styles.barLabel}>Body Feedback</div>
             </div>
           </div>
           <div className={styles.legend}>
@@ -312,11 +330,15 @@ const HealthReport = () => {
             </div>
             <div className={styles.legendItem}>
               <span className={styles.legendColor} style={{ background: '#94A3B8' }}></span>
-              Weeks 1-2
+              Week 1
+            </div>
+            <div className={styles.legendItem}>
+              <span className={styles.legendColor} style={{ background: '#FCA5A5' }}></span>
+              Week 2
             </div>
             <div className={styles.legendItem}>
               <span className={styles.legendColor} style={{ background: 'var(--lime)' }}></span>
-              Week 3-4
+              Weeks 3-4
             </div>
           </div>
         </div>
