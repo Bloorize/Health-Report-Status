@@ -532,7 +532,7 @@ const HealthReport = () => {
       });
       
       return filtered;
-    }, [dateRange]);
+    }, [dateRange, allData]);
 
     // Calculate time span in days
     const getTimeSpanDays = () => {
@@ -1043,7 +1043,7 @@ const HealthReport = () => {
           {charts.length === 0 ? (
             <div className={styles.dashboardEmptyState}>
               <i className="fas fa-chart-line"></i>
-              <p>No charts added yet. Click "Add Chart" to create your first visualization.</p>
+              <p>No charts added yet. Click &quot;Add Chart&quot; to create your first visualization.</p>
             </div>
           ) : (
             <div className={styles.dashboardGrid}>
