@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
+// Force trigger deployment
 import Head from 'next/head';
 import ReactECharts from 'echarts-for-react';
 import styles from '@/styles/HealthReport.module.css';
