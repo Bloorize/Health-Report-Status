@@ -210,9 +210,10 @@ export async function parseAllHealthKitFiles(): Promise<DailyAggregatedData[]> {
   const sleepData: DailyAggregatedData[] = [];
 
   // Parse all files
+  const basePath = '/Health-Report-Status';
   for (const file of files) {
     try {
-      const response = await fetch(`/split_data/${file}`);
+      const response = await fetch(`${basePath}/split_data/${file}`);
       const xmlContent = await response.text();
       
       if (file === 'Sleep.xml') {
