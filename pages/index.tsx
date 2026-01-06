@@ -187,7 +187,7 @@ const weeklyData = {
 };
 
 const HealthReport = () => {
-  const [activeTab, setActiveTab] = useState<'report' | 'baseline' | 'week1' | 'week2' | 'week3' | 'week4' | 'dashboard'>('report');
+  const [activeTab, setActiveTab] = useState<'report' | 'baseline' | 'week1' | 'week2' | 'week3' | 'week4' | 'clinical' | 'dashboard'>('report');
   
   // Baseline values
   const baselineHrv = 30.5;
@@ -208,8 +208,9 @@ const HealthReport = () => {
         <p className={styles.summaryText}>
           With 54 days of data collected (30 days baseline, 24 days treatment), we have confirmed a sustained recovery 
           trajectory. The root cause remains identified as <strong>histamine-driven systemic inflammation</strong>. 
-          The latest data through early January 2026 shows that while holiday stressors created temporary volatility, 
-          the body&apos;s recovery baseline has significantly improved compared to the pre-treatment period.
+          This diagnosis is supported by a <strong>Historical Clinical Pattern</strong> of localized chronic 
+          fibro-inflammatory airway disease, repeatedly normal systemic markers (ruling out classic autoimmune issues), 
+          and a clear response to H1/H2 blockers &gt;6 weeks after steroids were discontinued.
         </p>
       </div>
 
@@ -1135,6 +1136,96 @@ const HealthReport = () => {
 
   const renderDashboard = () => <Dashboard />;
 
+  const renderClinicalContext = () => (
+    <>
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>Integrated Clinical Pattern</h2>
+        <p className={styles.summaryText}>
+          The diagnosis of <strong>histamine-driven systemic inflammation</strong> is supported by a 
+          temporal and response-driven pattern, rather than traditional lab thresholds. 
+          The &quot;Normal&quot; systemic labs serve as a critical signal, ruling out classic 
+          autoimmune diseases and pointing toward localized dysregulation.
+        </p>
+      </div>
+
+      <div className={styles.statGrid}>
+        <div className={styles.statCard}>
+          <div className={styles.statLabel}>Systemic Markers (ESR/CRP)</div>
+          <div className={styles.statValue}>Normal</div>
+          <div className={styles.statChange}>Not systemic/autoimmune</div>
+        </div>
+        <div className={styles.statCard}>
+          <div className={styles.statLabel}>Pathology</div>
+          <div className={styles.statValue}>Chronic</div>
+          <div className={styles.statChange}>Fibro-inflammatory</div>
+        </div>
+        <div className={styles.statCard}>
+          <div className={styles.statLabel}>Treatment Response</div>
+          <div className={styles.statValue}>Positive</div>
+          <div className={styles.statChange}>H1/H2 Blockers</div>
+        </div>
+      </div>
+
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>Historical Laboratory & Pathology</h2>
+        <div className={styles.infoBox} style={{ background: '#F8FAFC', border: '1px solid #E2E8F0' }}>
+          <h3 style={{ color: 'var(--royal-blue)', marginBottom: '15px' }}>
+            <i className="fas fa-microscope" style={{ marginRight: '10px' }}></i>
+            Pathology Summary (2023-2024)
+          </h3>
+          <ul style={{ marginLeft: '20px', lineHeight: '1.6' }}>
+            <li><strong>Findings:</strong> Granulation tissue, submucosal fibrosis, and mild chronic inflammation.</li>
+            <li><strong>Exclusions:</strong> No evidence of vasculitis, malignancy, sarcoidosis, or IgG4-related disease across multiple biopsies (including ARUP Laboratories).</li>
+            <li><strong>Clinical Insight:</strong> The localized nature of the airway disease, combined with normal systemic markers, is highly consistent with mast cell / histamine-mediated dysregulation.</li>
+          </ul>
+        </div>
+
+        <div className={styles.infoBox} style={{ marginTop: '20px', background: '#F0F9FF', border: '1px solid #BAE6FD' }}>
+          <h3 style={{ color: '#0369A1', marginBottom: '15px' }}>
+            <i className="fas fa-flask" style={{ marginRight: '10px' }}></i>
+            Systemic Inflammatory & Autoimmune Labs
+          </h3>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px' }}>
+            <div>
+              <div style={{ fontWeight: 'bold' }}>ESR</div>
+              <div>1 mm/hr (Range: 0-15)</div>
+            </div>
+            <div>
+              <div style={{ fontWeight: 'bold' }}>CRP</div>
+              <div>0.75 mg/dL (Range: ≤1.0)</div>
+            </div>
+            <div>
+              <div style={{ fontWeight: 'bold' }}>ANCA Panel</div>
+              <div>Negative (&lt;1:20)</div>
+            </div>
+            <div>
+              <div style={{ fontWeight: 'bold' }}>Rheumatoid Factor</div>
+              <div>&lt;13 IU/mL (Range: ≤30)</div>
+            </div>
+          </div>
+          <p style={{ marginTop: '15px', fontStyle: 'italic', fontSize: '0.9em' }}>
+            Note: These &quot;normal&quot; results are signal-positive data points that helped narrow the search to histamine dysregulation.
+          </p>
+        </div>
+      </div>
+
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>The Steroid Timeline Comparison</h2>
+        <div className={styles.projectionBox} style={{ background: '#FFF7ED', border: '1px solid #FFEDD5' }}>
+          <p style={{ color: '#9A3412', fontWeight: 'bold', marginBottom: '10px' }}>
+            Important Temporal Distinction:
+          </p>
+          <p style={{ color: '#9A3412' }}>
+            The current physiological improvements (HRV increase, RHR decrease) are observed 
+            <strong> &gt;6 weeks after the discontinuation of post-operative steroids</strong> (last dose Nov 17). 
+            This confirms that the gains are sustained by the current H1/H2 protocol and not a residual 
+            corticosteroid effect.
+          </p>
+        </div>
+      </div>
+    </>
+  );
+
   const renderWeeklyReport = (weekKey: 'baseline' | 'week1' | 'week2' | 'week3' | 'week4') => {
     const week = weeklyData[weekKey];
     const isBaseline = weekKey === 'baseline';
@@ -1303,6 +1394,8 @@ const HealthReport = () => {
             ? 'Week 3: Holiday Stability'
             : activeTab === 'week4'
             ? 'Week 4: New Year Recovery'
+            : activeTab === 'clinical'
+            ? 'Historical Clinical Pattern'
             : 'Interactive Dashboard'}
         </div>
         <div className={styles.date}>January 4, 2026</div>
@@ -1347,6 +1440,12 @@ const HealthReport = () => {
           Week 4
         </button>
         <button
+          className={activeTab === 'clinical' ? `${styles.tab} ${styles.activeTab}` : styles.tab}
+          onClick={() => setActiveTab('clinical')}
+        >
+          Clinical History
+        </button>
+        <button
           className={activeTab === 'dashboard' ? `${styles.tab} ${styles.activeTab}` : styles.tab}
           onClick={() => setActiveTab('dashboard')}
         >
@@ -1361,6 +1460,7 @@ const HealthReport = () => {
         {activeTab === 'week2' && renderWeeklyReport('week2')}
         {activeTab === 'week3' && renderWeeklyReport('week3')}
         {activeTab === 'week4' && renderWeeklyReport('week4')}
+        {activeTab === 'clinical' && renderClinicalContext()}
         {activeTab === 'dashboard' && renderDashboard()}
       </div>
 
