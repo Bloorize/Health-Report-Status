@@ -757,25 +757,32 @@
         flex-direction: column !important;
         height: auto !important;
         min-height: auto !important;
-        gap: 30px;
+        gap: 0;
         align-items: stretch;
     }
 
     .barGroup {
         flex-direction: row;
         margin: 0;
-        align-items: center;
+        align-items: flex-end;
         gap: 15px;
         max-width: 100%;
         min-width: 100%;
+        padding: 30px 0;
+        border-bottom: 1px solid #E2E8F0;
+    }
+
+    .barGroup:last-child {
+        border-bottom: none;
     }
 
     .bars {
         flex-direction: row;
         gap: 6px;
-        height: 100px;
+        height: 80px;
         flex: 1;
         justify-content: flex-end;
+        padding-top: 25px;
     }
 
     .bar {
@@ -785,17 +792,18 @@
 
     .barValue {
         font-size: 0.65em;
-        top: -18px;
+        top: -20px;
         white-space: nowrap;
     }
 
     .barLabel {
-        font-size: 0.75em;
-        min-width: 70px;
-        width: 70px;
+        font-size: 0.8em;
+        min-width: 85px;
+        width: 85px;
         text-align: left;
         margin-top: 0;
         order: -1;
+        padding-bottom: 30px;
     }
 
     /* Legend responsive */
