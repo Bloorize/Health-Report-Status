@@ -355,10 +355,10 @@ const HealthReport = () => {
         <h2 className={styles.sectionTitle}>Treatment Progress Timeline</h2>
         <div className={styles.timeline}>
           <div className={styles.timelineItem}>
-            <div className={styles.timelineDate}>Nov 11 - Dec 10</div>
+            <div className={styles.timelineDate}>Dec 4 - 10</div>
             <div className={styles.timelineContent}>
               <h4>Baseline Period</h4>
-              <p>Chronic inflammation state. HRV averaged 30.5 ms. Frequent symptomatic flares. High physiological stress baseline.</p>
+              <p>Pre-treatment baseline captured. HRV averaged 30.5 ms, RHR 80.1 bpm. Chronic inflammation state with frequent symptomatic flares.</p>
             </div>
           </div>
           <div className={styles.timelineItem}>
@@ -383,10 +383,10 @@ const HealthReport = () => {
             </div>
           </div>
           <div className={styles.timelineItem}>
-            <div className={styles.timelineDate}>Jan 1 - 3</div>
+            <div className={styles.timelineDate}>Jan 1 - 8</div>
             <div className={styles.timelineContent}>
-              <h4>New Year Benchmark (Week 4)</h4>
-              <p><strong>January 3rd represents a new record low RHR of 68 bpm.</strong> Rebound speed from holiday disruptions has improved significantly, indicating better inflammatory control.</p>
+              <h4>Strong Recovery (Week 4)</h4>
+              <p><strong>Best week of treatment.</strong> HRV climbed from 27.5ms to peak of 41.2ms (Jan 7). RHR dropped to new record low of 65 bpm. Body Feedback Score hit 75.2—highest recorded. Clear upward trajectory throughout the week.</p>
             </div>
           </div>
         </div>
