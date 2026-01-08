@@ -202,11 +202,10 @@
 
 .barChart {
     display: flex;
-    flex-wrap: wrap;
     align-items: flex-end;
-    justify-content: center;
-    gap: 20px;
-    min-height: 250px;
+    justify-content: space-around;
+    gap: 15px;
+    height: 250px;
     margin-top: 20px;
 }
 
@@ -214,9 +213,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1 1 150px;
-    min-width: 150px;
-    max-width: 250px;
+    flex: 1;
+    min-width: 0;
 }
 
 .bars {
