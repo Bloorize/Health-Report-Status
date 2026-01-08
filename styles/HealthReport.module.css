@@ -459,6 +459,87 @@
     margin-right: 8px;
 }
 
+/* Metric Cards Grid */
+.metricCardsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.metricCard {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.metricCardTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--royal-blue);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.metricCardChart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 140px;
+    gap: 8px;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.metricBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+
+.metricBarFill {
+    width: 100%;
+    max-width: 45px;
+    min-width: 30px;
+    border-radius: 6px 6px 0 0;
+    transition: height 0.3s ease;
+}
+
+.metricBarLabel {
+    font-size: 0.8em;
+    font-weight: 700;
+    color: var(--royal-blue);
+    margin-top: 8px;
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.metricBarWeek {
+    font-size: 0.65em;
+    color: var(--slate-body);
+    position: absolute;
+    bottom: -42px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.metricCardTrend {
+    text-align: center;
+    font-size: 0.85em;
+    font-weight: 600;
+    padding-top: 10px;
+    border-top: 1px solid #E2E8F0;
+}
+
 .tabs {
     display: flex;
     gap: 0;
@@ -752,58 +833,39 @@
         margin-bottom: 20px;
     }
 
-    /* Bar chart responsive - stack vertically on mobile */
-    .barChart {
-        flex-direction: column !important;
-        height: auto !important;
-        min-height: auto !important;
-        gap: 0;
-        align-items: stretch;
-    }
-
-    .barGroup {
-        flex-direction: row;
-        margin: 0;
-        align-items: flex-end;
+    /* Metric Cards responsive */
+    .metricCardsGrid {
+        grid-template-columns: 1fr;
         gap: 15px;
-        max-width: 100%;
-        min-width: 100%;
-        padding: 30px 0;
-        border-bottom: 1px solid #E2E8F0;
     }
 
-    .barGroup:last-child {
-        border-bottom: none;
+    .metricCard {
+        padding: 20px;
     }
 
-    .bars {
-        flex-direction: row;
+    .metricCardTitle {
+        font-size: 0.95em;
+        margin-bottom: 15px;
+    }
+
+    .metricCardChart {
+        height: 130px;
+        padding-bottom: 45px;
         gap: 6px;
-        height: 80px;
-        flex: 1;
-        justify-content: flex-end;
-        padding-top: 25px;
     }
 
-    .bar {
-        width: 36px !important;
-        min-width: 36px;
+    .metricBarFill {
+        max-width: 55px;
     }
 
-    .barValue {
-        font-size: 0.65em;
-        top: -20px;
-        white-space: nowrap;
+    .metricBarLabel {
+        font-size: 0.75em;
+        bottom: -22px;
     }
 
-    .barLabel {
-        font-size: 0.8em;
-        min-width: 85px;
-        width: 85px;
-        text-align: left;
-        margin-top: 0;
-        order: -1;
-        padding-bottom: 30px;
+    .metricBarWeek {
+        font-size: 0.6em;
+        bottom: -38px;
     }
 
     /* Legend responsive */

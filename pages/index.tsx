@@ -271,81 +271,91 @@ const HealthReport = () => {
 
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Baseline vs. Treatment Trends</h2>
-        <div className={styles.chartContainer}>
-          <div className={styles.chartTitle}>Health Metrics: HRV, HR & Body Feedback Score</div>
-          <div className={styles.barChart}>
-            {/* HRV Group */}
-            <div className={styles.barGroup}>
-              <div className={styles.bars}>
-                <div className={`${styles.bar} ${styles.pre}`} style={{ height: '122px' }}>
-                  <div className={styles.barValue}>30.5</div>
-                </div>
-                <div className={`${styles.bar} ${styles.week1}`} style={{ height: '114px' }}>
-                  <div className={styles.barValue}>28.6</div>
-                </div>
-                <div className={`${styles.bar} ${styles.post}`} style={{ height: '133px' }}>
-                  <div className={styles.barValue}>33.2</div>
-                </div>
-                <div className={`${styles.bar} ${styles.week3}`} style={{ height: '133px', background: '#A3E635' }}>
-                  <div className={styles.barValue}>33.2</div>
-                </div>
+        
+        {/* Metric Cards Grid */}
+        <div className={styles.metricCardsGrid}>
+          {/* HRV Card */}
+          <div className={styles.metricCard}>
+            <div className={styles.metricCardTitle}>Avg HRV (ms)</div>
+            <div className={styles.metricCardChart}>
+              <div className={styles.metricBar}>
+                <div className={styles.metricBarFill} style={{ height: '61%', background: '#E2E8F0' }}></div>
+                <div className={styles.metricBarLabel}>30.5</div>
+                <div className={styles.metricBarWeek}>Baseline</div>
               </div>
-              <div className={styles.barLabel}>Avg HRV (ms)</div>
-            </div>
-            {/* HR Group */}
-            <div className={styles.barGroup}>
-              <div className={styles.bars}>
-                <div className={`${styles.bar} ${styles.pre}`} style={{ height: '160px' }}>
-                  <div className={styles.barValue}>80.1</div>
-                </div>
-                <div className={`${styles.bar} ${styles.week1}`} style={{ height: '159px' }}>
-                  <div className={styles.barValue}>79.8</div>
-                </div>
-                <div className={`${styles.bar} ${styles.post}`} style={{ height: '158px', background: '#FCA5A5' }}>
-                  <div className={styles.barValue}>79.3</div>
-                </div>
-                <div className={`${styles.bar} ${styles.week3}`} style={{ height: '145px', background: '#F87171' }}>
-                  <div className={styles.barValue}>72.3</div>
-                </div>
+              <div className={styles.metricBar}>
+                <div className={styles.metricBarFill} style={{ height: '57%', background: '#94A3B8' }}></div>
+                <div className={styles.metricBarLabel}>28.6</div>
+                <div className={styles.metricBarWeek}>Wk 1</div>
               </div>
-              <div className={styles.barLabel}>Avg HR (bpm)</div>
-            </div>
-            {/* Body Feedback Group */}
-            <div className={styles.barGroup}>
-              <div className={styles.bars}>
-                <div className={`${styles.bar} ${styles.pre}`} style={{ height: '118px' }}>
-                  <div className={styles.barValue}>29.6</div>
-                </div>
-                <div className={`${styles.bar} ${styles.week1}`} style={{ height: '113px' }}>
-                  <div className={styles.barValue}>28.3</div>
-                </div>
-                <div className={`${styles.bar} ${styles.post}`} style={{ height: '138px', background: '#8B5CF6' }}>
-                  <div className={styles.barValue}>34.5</div>
-                </div>
-                <div className={`${styles.bar} ${styles.week3}`} style={{ height: '200px', background: '#C084FC' }}>
-                  <div className={styles.barValue}>50.1</div>
-                </div>
+              <div className={styles.metricBar}>
+                <div className={styles.metricBarFill} style={{ height: '66%', background: 'var(--lime)' }}></div>
+                <div className={styles.metricBarLabel}>33.2</div>
+                <div className={styles.metricBarWeek}>Wk 2</div>
               </div>
-              <div className={styles.barLabel}>Body Feedback</div>
+              <div className={styles.metricBar}>
+                <div className={styles.metricBarFill} style={{ height: '66%', background: '#A3E635' }}></div>
+                <div className={styles.metricBarLabel}>33.2</div>
+                <div className={styles.metricBarWeek}>Wk 3-4</div>
+              </div>
             </div>
+            <div className={styles.metricCardTrend} style={{ color: 'var(--lime)' }}>↑ +9% from baseline</div>
           </div>
-          <div className={styles.legend}>
-            <div className={styles.legendItem}>
-              <span className={styles.legendColor} style={{ background: '#E2E8F0' }}></span>
-              Baseline
+
+          {/* HR Card */}
+          <div className={styles.metricCard}>
+            <div className={styles.metricCardTitle}>Avg Resting HR (bpm)</div>
+            <div className={styles.metricCardChart}>
+              <div className={styles.metricBar}>
+                <div className={styles.metricBarFill} style={{ height: '100%', background: '#E2E8F0' }}></div>
+                <div className={styles.metricBarLabel}>80.1</div>
+                <div className={styles.metricBarWeek}>Baseline</div>
+              </div>
+              <div className={styles.metricBar}>
+                <div className={styles.metricBarFill} style={{ height: '99%', background: '#94A3B8' }}></div>
+                <div className={styles.metricBarLabel}>79.8</div>
+                <div className={styles.metricBarWeek}>Wk 1</div>
+              </div>
+              <div className={styles.metricBar}>
+                <div className={styles.metricBarFill} style={{ height: '99%', background: '#FCA5A5' }}></div>
+                <div className={styles.metricBarLabel}>79.3</div>
+                <div className={styles.metricBarWeek}>Wk 2</div>
+              </div>
+              <div className={styles.metricBar}>
+                <div className={styles.metricBarFill} style={{ height: '90%', background: '#F87171' }}></div>
+                <div className={styles.metricBarLabel}>72.3</div>
+                <div className={styles.metricBarWeek}>Wk 3-4</div>
+              </div>
             </div>
-            <div className={styles.legendItem}>
-              <span className={styles.legendColor} style={{ background: '#94A3B8' }}></span>
-              Week 1
+            <div className={styles.metricCardTrend} style={{ color: 'var(--lime)' }}>↓ -10% from baseline</div>
+          </div>
+
+          {/* Body Feedback Card */}
+          <div className={styles.metricCard}>
+            <div className={styles.metricCardTitle}>Body Feedback Score</div>
+            <div className={styles.metricCardChart}>
+              <div className={styles.metricBar}>
+                <div className={styles.metricBarFill} style={{ height: '59%', background: '#E2E8F0' }}></div>
+                <div className={styles.metricBarLabel}>29.6</div>
+                <div className={styles.metricBarWeek}>Baseline</div>
+              </div>
+              <div className={styles.metricBar}>
+                <div className={styles.metricBarFill} style={{ height: '57%', background: '#94A3B8' }}></div>
+                <div className={styles.metricBarLabel}>28.3</div>
+                <div className={styles.metricBarWeek}>Wk 1</div>
+              </div>
+              <div className={styles.metricBar}>
+                <div className={styles.metricBarFill} style={{ height: '69%', background: '#8B5CF6' }}></div>
+                <div className={styles.metricBarLabel}>34.5</div>
+                <div className={styles.metricBarWeek}>Wk 2</div>
+              </div>
+              <div className={styles.metricBar}>
+                <div className={styles.metricBarFill} style={{ height: '100%', background: '#C084FC' }}></div>
+                <div className={styles.metricBarLabel}>50.1</div>
+                <div className={styles.metricBarWeek}>Wk 3-4</div>
+              </div>
             </div>
-            <div className={styles.legendItem}>
-              <span className={styles.legendColor} style={{ background: '#FCA5A5' }}></span>
-              Week 2
-            </div>
-            <div className={styles.legendItem}>
-              <span className={styles.legendColor} style={{ background: 'var(--lime)' }}></span>
-              Weeks 3-4
-            </div>
+            <div className={styles.metricCardTrend} style={{ color: 'var(--lime)' }}>↑ +69% from baseline</div>
           </div>
         </div>
       </div>
