@@ -95,7 +95,8 @@ const week4Raw = [
   { date: '2026-01-04', day: 'Sun', hrv: 32.0, hr: 73.0, spo2: 92.0, sleep: 7.0, irregular: false },
   { date: '2026-01-05', day: 'Mon', hrv: 37.0, hr: 67.0, spo2: 93.0, sleep: 8.0, irregular: false },
   { date: '2026-01-06', day: 'Tue', hrv: 37.5, hr: 68.0, spo2: 94.0, sleep: 8.0, irregular: false },
-  { date: '2026-01-07', day: 'Wed', hrv: 41.2, hr: 65.0, spo2: 93.5, sleep: 8.0, irregular: false }
+  { date: '2026-01-07', day: 'Wed', hrv: 41.2, hr: 65.0, spo2: 93.5, sleep: 8.0, irregular: false },
+  { date: '2026-01-08', day: 'Thu', hrv: 32.9, hr: 68.0, spo2: 93.0, sleep: 8.0, irregular: false }
 ].map(day => ({
   ...day,
   bodyFeedback: calculateBodyFeedbackScore(day.hrv, day.hr)
@@ -177,11 +178,11 @@ const weeklyData = {
   },
   week4: {
     title: "Week 4: Strong Recovery Week",
-    dates: "Jan 1 - Jan 7",
+    dates: "Jan 1 - Jan 8",
     summary: {
-      good: "Exceptional week with a clear upward trajectory. HRV climbed steadily from 27.5ms on Jan 1 to 41.2ms on Jan 7 – the highest single-day HRV reading since treatment began. Resting heart rate dropped to 65 bpm by week's end, showing excellent cardiovascular adaptation. Average HRV of 34.1ms represents a 12% improvement over baseline.",
+      good: "Exceptional week with a clear upward trajectory. HRV climbed from 27.5ms on Jan 1 to a peak of 41.2ms on Jan 7 – the highest single-day HRV reading since treatment began. Resting heart rate dropped to 65 bpm (Jan 7), showing excellent cardiovascular adaptation. Jan 8 maintained solid metrics with 32.9ms HRV and 68 bpm RHR.",
       challenge: "Early week metrics (Jan 1-2) were slightly suppressed post-holiday, but the body demonstrated strong recovery capacity. Sleep remained consistent at 7-8 hours throughout the week.",
-      context: "This is the best week of the treatment period so far. The combination of improved HRV (34.1ms avg) and lower resting heart rate (70.3 bpm avg) resulted in the highest Body Feedback Scores to date, indicating the nervous system is reaching a new level of stability and resilience."
+      context: "This is the best week of the treatment period so far. The combination of improved HRV and lower resting heart rate resulted in the highest Body Feedback Scores to date, indicating the nervous system is reaching a new level of stability and resilience."
     },
     raw: week4Raw,
     get stats() {
@@ -210,7 +211,7 @@ const HealthReport = () => {
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Summary</h2>
         <p className={styles.summaryText}>
-          With 35 days of data collected (7 days baseline, 28 days treatment), we have confirmed a sustained and accelerating recovery 
+          With 36 days of data collected (7 days baseline, 29 days treatment), we have confirmed a sustained and accelerating recovery 
           trajectory. The root cause remains identified as <strong>histamine-driven systemic inflammation</strong>. 
           This diagnosis is supported by a <strong>Historical Clinical Pattern</strong> of localized chronic 
           fibro-inflammatory airway disease, repeatedly normal systemic markers (ruling out classic autoimmune issues), 
@@ -1471,7 +1472,7 @@ const HealthReport = () => {
       </div>
 
       <div className={styles.footer}>
-        <p>This report is based on 35 days of objective health data (Dec 4, 2025 - Jan 7, 2026).</p>
+        <p>This report is based on 36 days of objective health data (Dec 4, 2025 - Jan 8, 2026).</p>
         <p style={{ marginTop: '10px' }}>Data sources: Heart Rate Variability (HRV-SDNN), Resting Heart Rate, SpO2, Sleep Duration.</p>
         <p style={{ marginTop: '15px', fontStyle: 'italic' }}>Report version 2.2. Updated January 8, 2026 with complete Week 4 data.</p>
       </div>
