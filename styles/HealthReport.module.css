@@ -202,9 +202,11 @@
 
 .barChart {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-end;
-    justify-content: space-around;
-    height: 250px;
+    justify-content: center;
+    gap: 20px;
+    min-height: 250px;
     margin-top: 20px;
 }
 
@@ -212,19 +214,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1;
-    margin: 0 10px;
+    flex: 1 1 150px;
+    min-width: 150px;
+    max-width: 250px;
 }
 
 .bars {
     display: flex;
-    gap: 12px;
+    gap: 8px;
     align-items: flex-end;
     height: 200px;
+    justify-content: center;
 }
 
 .bar {
-    width: 45px;
+    width: 38px;
     border-radius: 6px 6px 0 0;
     position: relative;
     transition: all 0.3s ease;
@@ -752,9 +756,10 @@
 
     /* Bar chart responsive - stack vertically on mobile */
     .barChart {
-        flex-direction: column;
-        height: auto;
-        gap: 40px;
+        flex-direction: column !important;
+        height: auto !important;
+        min-height: auto !important;
+        gap: 30px;
         align-items: stretch;
     }
 
@@ -763,30 +768,33 @@
         margin: 0;
         align-items: center;
         gap: 15px;
+        max-width: 100%;
+        min-width: 100%;
     }
 
     .bars {
         flex-direction: row;
-        gap: 8px;
-        height: 120px;
+        gap: 6px;
+        height: 100px;
         flex: 1;
-        justify-content: center;
+        justify-content: flex-end;
     }
 
     .bar {
-        width: 40px;
-        min-width: 40px;
+        width: 36px !important;
+        min-width: 36px;
     }
 
     .barValue {
-        font-size: 0.7em;
-        top: -20px;
+        font-size: 0.65em;
+        top: -18px;
         white-space: nowrap;
     }
 
     .barLabel {
-        font-size: 0.8em;
-        min-width: 80px;
+        font-size: 0.75em;
+        min-width: 70px;
+        width: 70px;
         text-align: left;
         margin-top: 0;
         order: -1;
