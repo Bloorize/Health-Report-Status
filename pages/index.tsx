@@ -365,7 +365,7 @@ const HealthReport = () => {
         <h2 className={styles.sectionTitle}>Treatment Progress Timeline</h2>
         <div className={styles.timeline}>
           <div className={styles.timelineItem}>
-            <div className={styles.timelineDate}>Dec 4 - 10</div>
+            <div className={styles.timelineDate}>Nov 4 - Dec 10</div>
             <div className={styles.timelineContent}>
               <h4>Baseline Period</h4>
               <p>Pre-treatment baseline captured. HRV averaged 30.5 ms, RHR 80.1 bpm. Chronic inflammation state with frequent symptomatic flares.</p>
